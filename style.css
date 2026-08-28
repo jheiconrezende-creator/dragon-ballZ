@@ -1,7 +1,23 @@
 body {
-    background-color: #4b0000;
-    background-image: url("goku.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+background-color: #4b0000;
+}
+
+h1 {
+color: #ffb300;
+font-size: 75px;
+font-family: Arial, sans-serif;
+text-align: center;
+text-transform: uppercase;
+}
+
+h2 {
+color: #ff6b00;
+font-family: Arial, sans-serif;
+font-size: 35px;
+}
+
+p {
+color: white;
+font-family: Arial, sans-serif;
+font-size: 20px;
 }
