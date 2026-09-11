@@ -185,3 +185,86 @@ footer {
   .section-head { flex-direction: column; align-items: flex-start; }
   .count { display: none; }
 }
+
+/* ===== Tema Dragon Ball ===== */
+:root {
+  --bg: #0b1026;
+  --card: #141b38;
+  --border: rgba(255,255,255,.08);
+  --text: #f4f6ff;
+  --muted: #9aa3c0;
+  --orange: #ff8a1f;
+  --gold: #ffd34d;
+  --red: #e23b2e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: "Rajdhani", system-ui, sans-serif; background: var(--bg); color: var(--text); }
+h1, h2, h3 { font-family: "Russo One", sans-serif; letter-spacing: .02em; }
+
+/* ---------- Topo ---------- */
+.hero {
+  position: relative; padding: 90px 24px 70px; text-align: center;
+  background: radial-gradient(600px 300px at 50% 35%, rgba(255,138,31,.28), transparent 60%),
+              linear-gradient(180deg, #131a3a, var(--bg));
+}
+.ball {
+  width: 96px; height: 96px; border-radius: 50%; margin: 0 auto;
+  background: radial-gradient(circle at 35% 30%, #fff3c4, var(--gold) 35%, var(--orange) 75%);
+  box-shadow: 0 0 45px rgba(255,160,50,.75), inset -8px -10px 20px rgba(180,70,0,.4);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+.eyebrow { margin-top: 26px; font-size: .8rem; letter-spacing: .4em; text-transform: uppercase; color: var(--orange); }
+.hero h1 {
+  margin-top: 10px; font-size: clamp(2.8rem, 9vw, 5rem);
+  background: linear-gradient(100deg, var(--gold), var(--orange), var(--red));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.lead { margin: 18px auto 0; max-width: 560px; font-size: 1.1rem; color: var(--muted); }
+.menu { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.menu a {
+  padding: 9px 20px; border-radius: 999px; border: 1px solid rgba(255,138,31,.5);
+  background: rgba(22,29,58,.7); color: var(--text); font-weight: 600; text-decoration: none; transition: .25s;
+}
+.menu a:hover { background: var(--orange); color: #17203f; }
+
+/* ---------- Seções por saga ---------- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px 90px; }
+section { padding-top: 80px; scroll-margin-top: 20px; }
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+.section-head h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+.section-head p { margin-top: 8px; color: var(--muted); }
+.year {
+  display: inline-block; margin-left: 12px; padding: 3px 12px; border-radius: 999px;
+  border: 1px solid rgba(255,138,31,.5); font-family: "Rajdhani", sans-serif;
+  font-size: .85rem; font-weight: 700; color: var(--gold); vertical-align: middle;
+}
+.count { color: var(--orange); font-weight: 700; white-space: nowrap; }
+
+/* ---------- Grade responsiva ---------- */
+.grid { margin-top: 32px; display: grid; gap: 24px; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- Cards ---------- */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 18px 40px -18px rgba(0,0,0,.8); transition: .35s; }
+.card:hover { transform: translateY(-6px); border-color: var(--orange); box-shadow: 0 0 40px -8px rgba(255,138,31,.6); }
+.frame { position: relative; aspect-ratio: 16 / 9; background: #0a0f22; }
+.frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.card-body { padding: 18px 20px; }
+.card-body h3 { font-size: 1.05rem; }
+.card-body p { margin-top: 6px; color: var(--muted); font-size: .92rem; }
+.tag { display: inline-block; margin-left: 8px; padding: 1px 10px; border-radius: 999px; background: rgba(255,138,31,.15); color: var(--gold); font-size: .8rem; font-weight: 700; }
+
+/* ---------- Rodapé ---------- */
+footer { border-top: 1px solid var(--border); padding: 36px 24px; text-align: center; color: var(--muted); font-size: .9rem; }
+
+/* ---------- Telas pequenas ---------- */
+@media (max-width: 520px) {
+  .hero { padding: 60px 16px 50px; }
+  .container { padding: 0 16px 70px; }
+  .section-head { flex-direction: column; align-items: flex-start; }
+  .count { display: none; }
+}
