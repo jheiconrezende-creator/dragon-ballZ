@@ -268,3 +268,14 @@ footer { border-top: 1px solid var(--border); padding: 36px 24px; text-align: ce
   .section-head { flex-direction: column; align-items: flex-start; }
   .count { display: none; }
 }
+
+/* ---------- Dragão Shenron no fundo ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("shenron.png") no-repeat center 40% / min(720px, 90vw);
+  opacity: 0.14;
+  pointer-events: none;
+}
